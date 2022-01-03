@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_notification_badge"
+        android:title="badge"
+        android:visible="false"
+        app:actionLayout="@layout/custom_action_item_layout"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/raisehand"
+        android:icon="@drawable/raise_hand"
+        android:title="Raise Hand"
+        app:iconTint="@color/white"
+        android:visible="true"
+        app:showAsAction="always" />
+
+
+
+</menu>

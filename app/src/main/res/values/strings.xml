@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Webinar QuickApp</string>
+    <string name="error_msg_raise_hand">To be able to raise hand, the user must not have muted their audio.</string>
+</resources>
