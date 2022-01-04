@@ -52,6 +52,17 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        int id = radioGroup.getCheckedRadioButtonId();
+        if(id == R.id.moderatorRadioButton){
+            role = "moderator";
+        }else{
+            role = "participant";
+        }
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.createRoom:
@@ -206,9 +217,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == 0) {
+                int id = radioGroup.getCheckedRadioButtonId();
+                if(id == R.id.moderatorRadioButton){
                     role = "moderator";
-                } else {
+                }else{
                     role = "participant";
                 }
             }

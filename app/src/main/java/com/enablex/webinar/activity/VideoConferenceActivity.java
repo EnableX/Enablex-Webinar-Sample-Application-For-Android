@@ -126,6 +126,11 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                 initialize();
             }
         }
+        if(role.equalsIgnoreCase("participant")){
+            dummyText.setText("Please wait for moderator to join");
+        }else{
+            dummyText.setText("");
+        }
     }
 
     private void initialize() {
@@ -603,7 +608,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.disconnect:
-                if (enxRooms != null) {
+                if (enxRooms != null && enxRooms.isConnected()) {
                     if (enxPlayerView != null) {
                         enxPlayerView.release();
                         enxPlayerView = null;

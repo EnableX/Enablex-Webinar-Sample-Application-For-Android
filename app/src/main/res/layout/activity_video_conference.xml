@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Please wait till other participant join"
+        android:text="Please wait for moderator to join"
         android:textColor="@color/white" />
 
     <TextView
