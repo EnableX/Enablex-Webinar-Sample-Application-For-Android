@@ -62,7 +62,7 @@
                 android:text=""
                 android:textColor="#757575"
                 android:textColorHint="#757575"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/roomId"
@@ -73,15 +73,15 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/background"
+                android:enabled="false"
                 android:hint="Enter RoomId"
                 android:maxLines="1"
                 android:padding="10dp"
                 android:singleLine="true"
-                android:text="61cc5af1250eda099c79989c"
-                android:enabled="false"
+                android:text=""
                 android:textColor="#757575"
                 android:textColorHint="#757575"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <RadioGroup
                 android:id="@+id/radioButtonGroup"

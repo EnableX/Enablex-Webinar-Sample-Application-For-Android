@@ -304,7 +304,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
             /*enxRooms.publish(localStream);*/
             enxRooms.setChairControlObserver(this);
             enxRooms.setReconnectObserver(this);
-            enxRoom.setActiveTalkerViewObserver(this::onActiveTalkerList);
+            enxRoom.setActiveTalkerViewObserver(this::onActiveTalkerView);
             try {
                 new Handler(getMainLooper()).postDelayed(new Runnable() {
                     @Override
@@ -378,7 +378,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
-    public void onActiveTalkerList(RecyclerView recyclerView) {
+    public void onActiveTalkerView(RecyclerView recyclerView) {
 
         mRecyclerView = recyclerView;
         if (recyclerView == null) {
@@ -450,6 +450,11 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     @Override
     public void onUserDataReceived(JSONObject jsonObject) {
 // received when custom data received at room
+    }
+
+    @Override
+    public void onUserStartTyping(boolean b) {
+
     }
 
     @Override
@@ -601,6 +606,26 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 
     @Override
     public void onRoomBandwidthAlert(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onStopAllSharingACK(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKStartLiveTranscription(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKStopLiveTranscription(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onTranscriptionEvents(JSONObject jsonObject) {
 
     }
 
