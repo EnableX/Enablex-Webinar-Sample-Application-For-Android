@@ -141,9 +141,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
         gson = new Gson();
         enxRtc = new EnxRtc(this, this, this);
         localStream = enxRtc.joinRoom(token, getLocalStreamJsonObjet(), getReconnectInfo(), new JSONArray());
-        enxPlayerView = new EnxPlayerView(this, EnxPlayerView.ScalingType.SCALE_ASPECT_BALANCED, true);
-        localStream.attachRenderer(enxPlayerView);
-        moderator.addView(enxPlayerView);
+
         progressDialog = new ProgressDialog(this);
         mHorizontalRecyclerView = (RecyclerView) findViewById(R.id.horizontalRecyclerView);
 
@@ -301,10 +299,13 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 //received when user connected with Enablex room
         enxRooms = enxRoom;
         if (enxRooms != null) {
+            enxPlayerView = new EnxPlayerView(this, EnxPlayerView.ScalingType.SCALE_ASPECT_BALANCED, true);
+            localStream.attachRenderer(enxPlayerView);
+            moderator.addView(enxPlayerView);
             /*enxRooms.publish(localStream);*/
             enxRooms.setChairControlObserver(this);
             enxRooms.setReconnectObserver(this);
-            enxRoom.setActiveTalkerViewObserver(this::onActiveTalkerView);
+            enxRoom.setActiveTalkerViewObserver(this);
             try {
                 new Handler(getMainLooper()).postDelayed(new Runnable() {
                     @Override
@@ -417,6 +418,11 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                 }
             });
         }
+
+    }
+
+    @Override
+    public void onActiveTalkerView(RecyclerView recyclerView, EnxRoom enxRoom) {
 
     }
 
@@ -614,20 +620,7 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 
     }
 
-    @Override
-    public void onACKStartLiveTranscription(JSONObject jsonObject) {
 
-    }
-
-    @Override
-    public void onACKStopLiveTranscription(JSONObject jsonObject) {
-
-    }
-
-    @Override
-    public void onTranscriptionEvents(JSONObject jsonObject) {
-
-    }
 
     @Override
     public void onClick(View view) {
