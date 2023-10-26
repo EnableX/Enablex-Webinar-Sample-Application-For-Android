@@ -1,22 +1,8 @@
-# Enablex-Webinar-Sample-Application-For-Android
-This is a sample video calling app that uses EnableX infrastructure, APIs and Toolkit. It allows developers to try out real-time video and along with feature of Raise Hand.
+# EnableX Webinar Android App: Video Calling, Raise Hand, and API Integration Guide
 
-
-This sample apps allows you to easily:
-* Create a Virtual Room with REST video API 
-* Gain the Room Credential (i.e. Room ID) 
-* Join Virtual Room either as moderator or partipicant securely
-
-You will also enjoy the following features: 
-* Mute/Unmute Video
-* Mute/Unmute Audio
-* Raise hand
-* Allow User to Come on Floor
-
+EnableX Webinar Android App: Video Calling, Raise Hand, and API Integration Guide
 
 > For more information, pls visit our Developer Center https://developer.enablex.io/
-
-
 
 ## 1. Get started
 
@@ -29,7 +15,6 @@ You would need API Credential to access EnableX platform. To do that, simply cre
 * Create an account with EnableX - https://portal.enablex.io/cpaas/trial-sign-up/
 * Create your Application
 * Get your App ID and App Key delivered to your email
-
 
 #### 1.1.2 Sample Android Client 
 
