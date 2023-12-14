@@ -1,22 +1,27 @@
-# Enablex-Webinar-Sample-Application-For-Android
-This is a sample video calling app that uses EnableX infrastructure, APIs and Toolkit. It allows developers to try out real-time video and along with feature of Raise Hand.
+# EnableX Webinar Android App: Video Calling, Raise Hand, and API Integration Guide
+Explore the EnableX-Webinar-Sample-Application-For-Android, a video calling app that harnesses the power of EnableX infrastructure, APIs, and Toolkit. This application allows developers to dive into real-time video communication while incorporating the unique ""Raise Hand"" feature. 
 
+With this sample app, you can effortlessly: 
 
-This sample apps allows you to easily:
-* Create a Virtual Room with REST video API 
-* Gain the Room Credential (i.e. Room ID) 
-* Join Virtual Room either as moderator or partipicant securely
+1. Create a Virtual Room using the REST video API. 
 
-You will also enjoy the following features: 
-* Mute/Unmute Video
-* Mute/Unmute Audio
-* Raise hand
-* Allow User to Come on Floor
+2. Obtain the essential Room Credential (Room ID). 
 
+3. Seamlessly Join Virtual Rooms as either a moderator or participant while ensuring security. 
 
-> For more information, pls visit our Developer Center https://developer.enablex.io/
+Enjoy a range of valuable features, including: 
 
+Mute/Unmute Video: Take control of your video feed. 
 
+Mute/Unmute Audio: Manage your audio input with ease. 
+
+Raise Hand: Signal your desire to speak or engage. 
+
+Allow User to Come on Floor: Grant others the opportunity to participate actively. 
+
+For additional details, please visit our comprehensive Developer Center at https://developer.enablex.io/ 
+
+Experience the future of video communication with EnableX! 
 
 ## 1. Get started
 
@@ -29,7 +34,6 @@ You would need API Credential to access EnableX platform. To do that, simply cre
 * Create an account with EnableX - https://portal.enablex.io/cpaas/trial-sign-up/
 * Create your Application
 * Get your App ID and App Key delivered to your email
-
 
 #### 1.1.2 Sample Android Client 
 
