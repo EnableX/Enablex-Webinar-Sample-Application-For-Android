@@ -50,7 +50,7 @@ An Application Server is required for your android App to communicate with Enabl
 Note the following:
 •    You need to use App ID and App Key to run this Service.
 •    Your android Client End Point needs to connect to this Service to create Virtual Room and Create Token to join the session.
-•    Application Server is created using [EnableX Server API] (https://www.enablex.io/developer/video-api/server-api), a Rest API Service helps in provisioning, session access and post-session reporting.
+•    Application Server is created using [EnableX Server API] (https://developer.enablex.io/docs/references/apis/video-api/index/), a Rest API Service helps in provisioning, session access and post-session reporting.
 
 If you would like to test the quality of EnableX video call before setting up your own application server,  you may run the test on our pre-configured environment. Refer to point 3 for more details on this.
 
@@ -116,15 +116,15 @@ Note the following:
 * Application Server is created using EnableX Server API, a Rest API Service helps in provisioning, session access and post-session reporting.  
 
 To know more about Server API, go to:
-https://www.enablex.io/developer/video-api/server-api
+https://developer.enablex.io/docs/references/apis/video-api/index/
   
   
 ## 4 Android Toolkit
 
 This Sample Applcation uses EnableX Android Toolkit to communicate with EnableX Servers to initiate and manage Real Time Communications. Please update your Application with latest version of EnableX Android Toolkit as and when a new release is available.
 
-* Documentation: https://www.enablex.io/developer/video-api/client-api/android-toolkit/
-* Download Toolkit: https://www.enablex.io/developer/video-api/client-api/android-toolkit/
+* Documentation: https://developer.enablex.io/docs/references/sdks/video-sdk/android-sdk/index/
+* Download Toolkit: https://developer.enablex.io/docs/references/sdks/video-sdk/android-sdk/index/
 
 
 ## 5. Support
