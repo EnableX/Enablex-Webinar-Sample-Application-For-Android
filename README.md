@@ -31,7 +31,7 @@ Experience the future of video communication with EnableX!
 
 You would need API Credential to access EnableX platform. To do that, simply create an account with us. It’s absolutely free!
 
-* Create an account with EnableX - https://portal.enablex.io/cpaas/trial-sign-up/
+* Create an account with EnableX - https://www.enablex.io/free-trial/
 * Create your Application
 * Get your App ID and App Key delivered to your email
 
@@ -98,7 +98,7 @@ In this environment, you will only be able to:
 * Conduct a single session with a total durations of no more than 15 minutes
 * Host a multiparty call with no more than 6 participants 
 
-> More information on Testing Environment: https://developer.enablex.io/video/sample-code/#demo-app-server
+> More information on Testing Environment: https://developer.enablex.io/docs/guides/video-guide/sample-codes/video-calling-app/#demo-application-server
 
 Once you have tested them, it is important that you set up your own Application Server to continue building a multiparty android video calling app. Refer to section 1.1.3 on how to set up the application server. 
 
@@ -116,7 +116,7 @@ Note the following:
 * Application Server is created using EnableX Server API, a Rest API Service helps in provisioning, session access and post-session reporting.  
 
 To know more about Server API, go to:
-https://developer.enablex.io/docs/references/apis/video-api/index/
+https://developer.enablex.io/docs/guides/video-guide/sample-codes/video-calling-app/#demo-application-server
   
   
 ## 4 Android Toolkit
