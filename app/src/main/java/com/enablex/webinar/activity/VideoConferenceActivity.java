@@ -225,25 +225,26 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.raisehand:
+
+            if(id== R.id.raisehand) {
                 if (enxRooms != null) {
-                    if(participantfloorAction == 0){
-                        if(validateAudioVideo())
+                    if (participantfloorAction == 0) {
+                        if (validateAudioVideo())
                             enxRooms.requestFloor();
                         else
-                            showTextMessage(getResources().getString(R.string.error_msg_raise_hand),true);
-                    }else if(participantfloorAction == 1) {
+                            showTextMessage(getResources().getString(R.string.error_msg_raise_hand), true);
+                    } else if (participantfloorAction == 1) {
                         openFloorRequestDialog(participantfloorAction);
-                    }else if(participantfloorAction == 2) {
+                    } else if (participantfloorAction == 2) {
                         openFloorRequestDialog(participantfloorAction);
                     }
                 } else {
                     roomNotConnected();
                 }
                 return true;
+            }
 
-            case R.id.action_notification_badge:
+            else if(id== R.id.action_notification_badge) {
                 if (enxRooms != null) {
                     if (floorRequestArrayList.size() > 0) {
                         openRequestedFloorDialogs();
@@ -427,6 +428,11 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
+    public void onAvailable(Integer integer) {
+
+    }
+
+    @Override
     public void onEventError(JSONObject jsonObject) {
 //received when any error occurred for any room event
         Toast.makeText(VideoConferenceActivity.this, jsonObject.optString("msg"), Toast.LENGTH_SHORT).show();
@@ -452,6 +458,31 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 // received when chat data received at room
     }
 
+    @Override
+    public void onACKSendMessage(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onMessageDelete(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKDeleteMessage(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onMessageUpdate(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onACKUpdateMessage(JSONObject jsonObject) {
+
+    }
+
 
     @Override
     public void onUserDataReceived(JSONObject jsonObject) {
@@ -459,19 +490,12 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
     }
 
     @Override
-    public void onUserStartTyping(boolean b) {
+    public void onUserStartTyping(JSONObject jsonObject) {
 
     }
 
-    @Override
-    public void onSwitchedUserRole(JSONObject jsonObject) {
-// received when user switch their role (from moderator  to participant)
-    }
 
-    @Override
-    public void onUserRoleChanged(JSONObject jsonObject) {
-// received when user role changed successfully
-    }
+
 
     @Override
     public void onConferencessExtended(JSONObject jsonObject) {
@@ -624,8 +648,9 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.disconnect:
+        int id = view.getId();
+
+            if(id== R.id.disconnect) {
                 if (enxRooms != null && enxRooms.isConnected()) {
                     if (enxPlayerView != null) {
                         enxPlayerView.release();
@@ -635,8 +660,8 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                 } else {
                     finish();
                 }
-                break;
-            case R.id.mute:
+            }
+            else if(id== R.id.mute) {
                 if (localStream != null) {
                     if (!isAudioMuted) {
                         localStream.muteSelfAudio(true);
@@ -644,8 +669,8 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                         localStream.muteSelfAudio(false);
                     }
                 }
-                break;
-            case R.id.video:
+            }
+            else if(id== R.id.video) {
                 if (localStream != null) {
                     if (!isVideoMuted) {
                         localStream.muteSelfVideo(true);
@@ -653,8 +678,8 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                         localStream.muteSelfVideo(false);
                     }
                 }
-                break;
-            case R.id.camera:
+            }
+            else if(id== R.id.camera) {
                 if (localStream != null) {
                     if (!isVideoMuted) {
                         if (isFrontCamera) {
@@ -666,31 +691,31 @@ public class VideoConferenceActivity extends AppCompatActivity implements EnxRoo
                             camera.setImageResource(R.drawable.front_camera);
                             isFrontCamera = true;
                         }
-                    }else{
-                        Toast.makeText(VideoConferenceActivity.this,"Please turn on the video to switch camera.", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(VideoConferenceActivity.this, "Please turn on the video to switch camera.", Toast.LENGTH_LONG).show();
                     }
                 }
-                break;
-            case R.id.volume:
+            }
+            else if(id== R.id.volume) {
                 if (enxRooms != null) {
                     showRadioButtonDialog();
                 }
-                break;
-            case R.id.clickEvent:
-                if(enxRooms != null){
-                    if(participantfloorAction == 1) {
+            }
+            if(id==R.id.clickEvent) {
+                if (enxRooms != null) {
+                    if (participantfloorAction == 1) {
                         enxRooms.cancelFloor();
-                    }else {
+                    } else {
                         enxRooms.finishFloor();
                     }
                     participantfloorAction = 0;
-                    if(dialog != null && dialog.isShowing()){
+                    if (dialog != null && dialog.isShowing()) {
                         dialog.cancel();
                     }
                 } else {
                     roomNotConnected();
                 }
-                break;
+
         }
     }
 

@@ -80,16 +80,16 @@ public class FloorRequestDialogAdapter extends RecyclerView.Adapter<FloorRequest
 
         @Override
         public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.acceptTV:
+            int id = view.getId();
+
+                if(id== R.id.acceptTV) {
                     clickListener.onFloorRequestAccepted(getLayoutPosition());
-                    break;
-                case R.id.rejectTV:
+                }
+                else if(id== R.id.rejectTV) {
                     clickListener.onFloorRequestRejected(getLayoutPosition());
-                    break;
-                case R.id.revokeTV:
+                }
+                else if(id== R.id.revokeTV){
                     clickListener.onFloorRequestRevoked(getLayoutPosition());
-                    break;
             }
 
         }
